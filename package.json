@@ -1,0 +1,46 @@
+{
+  "name": "node-shorturl",
+  "version": "0.0.1",
+  "description": "Short string generator for long URLs with no persistence",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/codebloke/node-shorturl.git"
+  },
+  "author": "Martin Swiderski <codebloke@gmail.com> (http://codebloke.wordpress.com/)",
+  "maintainers": [
+    "Martin Swiderski <codebloke@gmail.com>"
+  ],
+  "licenses": [{
+    "type": "MIT",
+    "url": "https://bitbucket.org/codebloke/node-shorturl/src"
+  }],
+  "scripts": {
+    "test": "jasmine-node tests/",
+    "jslint": "jslint server.js src/*.js"
+  },
+  "dependencies": {
+    "jasmine-node": "^1.14.5",
+    "moment": "^2.10.6",
+    "querystring": "^0.2.0",
+    "system": "0.1.0"
+  },
+  "devDependencies": {
+    "jslint": "^0.7.2",
+    "mocha": "^2.3.4",
+    "standard": "^5.4.1"
+  },
+  "bugs": "https://bitbucket.org/codebloke/node-shorturl/issues",
+  "homepage": "https://bitbucket.org/codebloke/node-shorturl#readme",
+  "directories": {
+    "example": "examples of use",
+    "test": "tests",
+    "src": "source code"
+  },
+  "keywords": [
+    "short",
+    "url",
+    "lean",
+    "messages"
+  ],
+  "license": "MIT"
