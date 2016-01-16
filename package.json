@@ -11,10 +11,12 @@
   "maintainers": [
     "Martin Swiderski <codebloke@gmail.com>"
   ],
-  "licenses": [{
-    "type": "MIT",
-    "url": "https://bitbucket.org/codebloke/node-shorturl/src"
-  }],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://bitbucket.org/codebloke/node-shorturl/src"
+    }
+  ],
   "scripts": {
     "test": "jasmine-node tests/",
     "jslint": "jslint server.js src/*.js"
@@ -44,3 +46,4 @@
     "messages"
   ],
   "license": "MIT"
+}
