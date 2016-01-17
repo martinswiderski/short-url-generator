@@ -23,9 +23,12 @@
   },
   "dependencies": {
     "jasmine-node": "^1.14.5",
-    "moment": "^2.10.6",
+    "md5": "^2.0.0",
     "querystring": "^0.2.0",
-    "system": "0.1.0"
+    "sha1": "^1.1.1",
+    "system": "0.1.0",
+    "unix-time": "^1.0.1",
+    "url-parse": "^1.0.5"
   },
   "devDependencies": {
     "jslint": "^0.7.2",
