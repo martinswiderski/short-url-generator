@@ -15,3 +15,11 @@ describe("Reads from env vars", function () {
         expect(configuration.get("parseUrl")).toBe('E');
     });
 });
+
+configuration.set('me', '1');
+
+describe("Can be set within application", function () {
+    it("for reuse", function () {
+        expect(configuration.get("me")).toBe('1');
+    });
+});

@@ -30,6 +30,16 @@ var configuration = function configuration() {
 
     this.get = function (key) {
         return (this.storage[key]) ? this.storage[key] : null;
+    },
+
+    /**
+     * By default you cannot overwrite existing keys as they mostly would come
+     * from environment variables.
+     * @param string key   Key name
+     * @param mixed  value Value to be set
+     */
+    this.set = function(key, value) {
+        this.storage[key] = value;
     };
 };
 
