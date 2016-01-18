@@ -1,39 +1,29 @@
-var url = function url() {
+var url,
+    urlParse = require('url-parse');
+
+url = function url() {
 
     /**
-     * Max length of generated short string
-     * @type {number}
+     * Blank URL template
+     * @type {string}
      */
-    this.max = 5;
+    this.template = '{"href":"","protocol":"","username":"","password":"","auth":"","host":"","hostname":"","port":"","pathname":"","query":"","hash":""}';
 
     /**
-     * Minimum length of generated short string
-     * @type {number}
+     * Takes URL if valid and breaks it down to pieces
+     * @param string url
+     * @returns {} processed URL if valid URL
      */
-    this.min = 3;
-
-    /**
-     * Number of the same numbers or letters in generated string
-     * @type {number}
-     */
-    this.sameChar = 2;
-
-    this.resetConfig = function (min, max, numSameChars) {
-
-        var setValues = {
-            min: min,
-            max: max,
-            sameChar: numSameChars
-        };
-
-        for (var k in setValues) {
-            if (!isNaN(setValues[k])) {
-                this[k] = parseInt(setValues[k]);
-            }
+    this.process = function (string) {
+        var processed = {};
+        if (/(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/.test(string)) {
+            processed = urlParse(string);
+        } else {
+            processed = JSON.parse(this.template);
         }
+        delete processed['href'];
+        return processed;
     };
-
-
 };
 
 module.exports = new url();
