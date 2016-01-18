@@ -1,5 +1,9 @@
 var url,
-    urlParse = require('url-parse');
+    urlParse = require('url-parse'),
+    md5sign  = require('md5'),
+    sha1sign = require('sha1'),
+    unixTime = require('unix-time'),
+    urlParse = require('url-parse'),
 
 url = function url() {
 
@@ -14,7 +18,7 @@ url = function url() {
      * @param string url
      * @returns {} processed URL if valid URL
      */
-    this.process = function (string) {
+    this.details = function (string) {
         var processed = {};
         if (/(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/.test(string)) {
             processed = urlParse(string);
@@ -23,6 +27,26 @@ url = function url() {
         }
         delete processed['href'];
         return processed;
+    },
+
+    this.process = function (string) {
+        var details = this.details(string),
+            date    = new Date(),
+            full    = {
+                url: string,
+                strlen: string.length,
+                short: '',
+                md5: md5sign(string),
+                sha1: sha1sign(string),
+                timestamp: date,
+                unix: unixTime(date),
+                is_url: (details.protocol !== '' && details.host !== ''),
+                url_details: details,
+                originator: {
+                    ip: 'not-implemented-yet'
+                }
+            };
+        return full;
     };
 };
 

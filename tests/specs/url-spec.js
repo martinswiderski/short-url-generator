@@ -1,6 +1,6 @@
 var url = require(__dirname + "/../../src/url");
 
-var wrong = url.process(123);
+var wrong = url.details(123);
 
 describe("Picks uup only URL strings", function () {
     it("for processing", function () {
@@ -17,8 +17,8 @@ describe("Picks uup only URL strings", function () {
     });
 });
 
-var valid = url.process('http://stackoverflow.com:8080/questions/13335873/how-to-check-if-a-variable-is-defined-or-not?query=1#hashOne');
-
+var valid = url.details('http://stackoverflow.com:8080/questions/13335873/how-to-check-if-a-variable-is-defined-or-not?query=1#hashOne');
+console.log(valid);
 describe("Valid URLs are broken to pieces", function () {
     it("to smallest details", function () {
         expect(valid.hash).toBe('#hashOne');
@@ -33,6 +33,8 @@ describe("Valid URLs are broken to pieces", function () {
         expect(valid.username).toBe('');
     });
 });
+
+console.log(url.process('http://stackoverflow.com:8080/questions/13335873/how-to-check-if-a-variable-is-defined-or-not?query=1#hashOne'));
 
 
 
