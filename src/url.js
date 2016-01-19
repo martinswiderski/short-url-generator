@@ -4,7 +4,7 @@ var url,
     sha1sign = require('sha1'),
     unixTime = require('unix-time'),
     urlParse = require('url-parse'),
-    urlParse = require('./short');
+    short    = require('./short');
 
 url = function url() {
 
@@ -32,11 +32,12 @@ url = function url() {
 
     this.process = function (string) {
         var details = this.details(string),
-            date    = new Date(),
-            full    = {
+            date = new Date();
+
+        var full = {
                 url: string,
                 strlen: string.length,
-                short: short.build(),
+                short: short.generate(),
                 md5: md5sign(string),
                 sha1: sha1sign(string),
                 timestamp: date,
@@ -47,6 +48,8 @@ url = function url() {
                     ip: 'not-implemented-yet'
                 }
             };
+
+        console.log(full);
         return full;
     };
 };

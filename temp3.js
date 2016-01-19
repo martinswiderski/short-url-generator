@@ -1,8 +1,7 @@
 
 
-var short = require('./src/short');
+var url = require('./src/url');
 
 
 
-
-console.log(short.randomCharacter());
+console.log(url.process(123));

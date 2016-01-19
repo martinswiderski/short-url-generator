@@ -30,17 +30,24 @@ short = function url() {
         return (this.randBool() === false) ? pool[num] : pool[num].toLowerCase();
     },
 
-    this.generate = function () {
-        var out = '';
-        for (var i = 0; i < config.min; i++) {
-            out = out + this.randomCharacter();
+    this.generate = function (min) {
+        if (!isNaN(min)) {
+            min = config.get('min');
         }
-        console.log(out);
-        return out;
+        var x;
+        do {
+            x = this.shuffle(min);
+        } while (!isNaN(x));
+        return x;
+    },
+
+    this.shuffle = function (min) {
+        var out = [];
+        for (var i = 0; i < min; i++) {
+            out.push(this.randomCharacter());
+        }
+        return out.join('').split("").reverse().join("");
     };
-
-
-
 };
 
 module.exports = new short();
