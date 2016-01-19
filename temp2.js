@@ -1,9 +1,26 @@
+function randomNumber (min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
 
-var short     = require('./src/short'),
-    urlString = 'http://business.worldpay.com/merchant-services?mh_keyword=%2Bcard%20%2Bpayments&campaignID=194165972&campaign={campaign}&medium={cpc}&source={google}&keyword=%2Bcard%20%2Bpayments&gclid=CjwKEAiA8ee0BRD1l7vV6JHe0zISJADxYItmkKtIFPlNPoYNOM_s4gILJe_5-jyplwONDbsAcuQTFhoC7pLw_wcB';
+function randomCharacter () {
+    var pool   = 'TUVGH1I8AC3J2VKLM460BN6O5PQ7RS9XYWZ',
+        rand   = randomNumber(0, 34),
+        even   = isEven(rand),
+        number = !isNaN(pool[rand]);
+        lcase  = (number !== true && isEven(randomNumber(0, 999)));
 
+        console.log(lcase);
+        console.log(even);
+        console.log(number);
 
+        letter = (!isNaN(pool[rand]) && isEven(rand))
+                 ? pool[rand].toLowerCase() : pool[rand];
+    return  letter;
+}
 
-console.log('ME');
-console.log(/(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/.test(urlS););
-console.log(short.parsed(urlString));
+function isEven(value) {
+    return value % 2 === 0;
+}
+
+console.log(randomCharacter());
+console.log(isEven(randomNumber(0, 5)));

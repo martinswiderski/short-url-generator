@@ -4,6 +4,7 @@ var url,
     sha1sign = require('sha1'),
     unixTime = require('unix-time'),
     urlParse = require('url-parse'),
+    urlParse = require('./short');
 
 url = function url() {
 
@@ -35,7 +36,7 @@ url = function url() {
             full    = {
                 url: string,
                 strlen: string.length,
-                short: '',
+                short: short.build(),
                 md5: md5sign(string),
                 sha1: sha1sign(string),
                 timestamp: date,
