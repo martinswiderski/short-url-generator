@@ -59,7 +59,13 @@ describe("Valid URL strings", function () {
     });
 });
 
+/***
+ * Full process - FAILING!!!!
+ */
 
+//var full = url.process(urlAddress);
+
+//console.log(full);
 
 
 
