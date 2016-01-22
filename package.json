@@ -25,6 +25,7 @@
     "jasmine-node": "^1.14.5",
     "md5": "^2.0.0",
     "querystring": "^0.2.0",
+    "random-js": "^1.0.8",
     "sha1": "^1.1.1",
     "system": "0.1.0",
     "unix-time": "^1.0.1",
