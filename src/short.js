@@ -31,6 +31,9 @@ short = function url() {
     },
 
     this.generate = function (min) {
+
+        return 'ABC'; // @todo: review this one do/while sucks
+
         if (!isNaN(min)) {
             min = config.get('min');
         }
@@ -38,6 +41,8 @@ short = function url() {
         do {
             x = this.shuffle(min);
         } while (!isNaN(x));
+        console.log('NUM');
+        console.log(x);
         return x;
     },
 
