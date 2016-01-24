@@ -65,7 +65,7 @@ describe("Valid URL strings", function () {
 
 var full = url.process(urlAddress);
 
-console.log(full);
+//console.log(full);
 
 
 
