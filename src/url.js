@@ -31,6 +31,7 @@ url = function url() {
     },
 
     this.process = function (string) {
+
         var details = this.details(string),
             date = new Date();
 
@@ -49,7 +50,6 @@ url = function url() {
                 }
             };
 
-        console.log(full);
         return full;
     };
 };
