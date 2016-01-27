@@ -9,8 +9,8 @@ short = function url() {
         return Math.floor(Math.random() * (max - min + 1) + min);
     },
 
-    this.randBool = function () {
-        var num = this.randomNumber(1,2);
+    this.randomBool = function () {
+        var num = this.randomNumber(0,35667);
         return (num % 2 == 0);
     },
 
@@ -27,23 +27,29 @@ short = function url() {
         };
         var range = ranges[this.randomNumber(1, 3)];
         var num = this.randomNumber(range.from, range.to);
-        return (this.randBool() === false) ? pool[num] : pool[num].toLowerCase();
+        return (this.randomBool() === false) ? pool[num] : pool[num].toLowerCase();
     },
 
     this.generate = function (min) {
 
-        return 'ABC'; // @todo: review this one do/while sucks
+        var out = [], recent = '';
 
-        if (!isNaN(min)) {
-            min = config.get('min');
+        for (var i = 0; i < parseInt(min); i++) {
+            var anew   = this.randomBool() === true ? this.randomCharacter() : this.randomNumber();
+            if (anew === recent) {
+                var anew   = this.randomBool() === true ? this.randomCharacter() : this.randomNumber();
+            }
+            var recent = anew;
+            if ((parseInt(anew)+'') === (anew+'')) {
+                out.push(anew);
+            } else {
+                if (this.randomBool() === true) {
+                    anew = (new String(anew)).toLocaleLowerCase();
+                }
+                out.push(anew);
+            }
         }
-        var x;
-        do {
-            x = this.shuffle(min);
-        } while (!isNaN(x));
-        console.log('NUM');
-        console.log(x);
-        return x;
+        return out.join('');
     },
 
     this.shuffle = function (min) {

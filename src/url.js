@@ -6,6 +6,15 @@ var url,
     urlParse = require('url-parse'),
     short    = require('./short');
 
+
+String.prototype.allReplace = function(replace) {
+    var retStr = this;
+    for (var subject in replace) {
+        retStr = retStr.replace(new RegExp(subject, 'g'), replace[x]);
+    }
+    return retStr;
+};
+
 url = function url() {
 
     /**
@@ -13,6 +22,19 @@ url = function url() {
      * @type {string}
      */
     this.template = '{"href":"","protocol":"","username":"","password":"","auth":"","host":"","hostname":"","port":"","pathname":"","query":"","hash":""}';
+
+    this.decomposeQuery = function (query, replace) {
+
+        if (!replace) {
+            replace = {"=": '": "', "?": "{ "};
+        }
+        var retStr = this;
+        for (var x in replace) {
+            retStr = retStr.replace(new RegExp(x, 'g'), replace[x]);
+        }
+        return retStr;
+    },
+
 
     /**
      * Takes URL if valid and breaks it down to pieces
@@ -49,6 +71,8 @@ url = function url() {
                     ip: 'not-implemented-yet'
                 }
             };
+
+        full.url_details.query_components = this.decomposeQuery(full.url_details.query);
 
         return full;
     };
