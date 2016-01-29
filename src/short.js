@@ -31,11 +31,23 @@ short = function url() {
     },
 
     this.generate = function (min) {
-        return 'PLACEHOLDER';
-    },
+        if ((typeof min) !== 'number') {
+            return 'ERROR';
+        }
 
-    this.shuffle = function (min) {
+        var out = [], str, min = parseInt(min);
+
+        for(var i = 0; i <min; i++) {
+            str = this.randomCharacter();
+            if (isNaN(str)) {
+                str = (this.randomBool() === true) ? str.toLocaleLowerCase() : str;
+            }
+            out.push(str);
+        }
+
+        return out.join('');
     };
+
 };
 
 module.exports = new short();

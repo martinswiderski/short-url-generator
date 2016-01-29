@@ -1,4 +1,5 @@
-var url = require(__dirname + "/../../src/url");
+var url     = require(__dirname + "/../../src/url"),
+    md5sign = require('md5');
 
 
 /***
@@ -59,4 +60,12 @@ describe("Valid URL strings", function () {
     });
 });
 
-
+var fullDetails = url.process(urlAddress);
+describe("Full URL details", function () {
+    it("are processed if URL is valid", function () {
+        expect(fullDetails.url).toBe(urlAddress);
+        expect(fullDetails.is_url).toBe(true);
+        expect(fullDetails.md5).toBe(md5sign(urlAddress));
+        expect(fullDetails.strlen).toBe(urlAddress.length);
+    });
+});

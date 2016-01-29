@@ -71,8 +71,25 @@ describe("Values distribution", function () {
     });
 });
 
+/**
+ * If length of the short string is provided non-integer
+ * a string 'ERROR' is returned.
+ */
+describe("Length of short string provided incorectly result in error message", function () {
+    it("Non INT", function () {
+        expect(short.generate('ABC')).toBe('ERROR');
+    });
+});
 
-//console.log(alphaNumDistr);
-
-//console.log(short.generate(3));
+/**
+ * Correct (INT) value generates random string of given length
+ */
+describe("Length of short string provided incorectly result in error message", function () {
+    it("Non INT", function () {
+        var randStr1 = short.generate(4);
+        var randStr2 = short.generate(4.5); // double is ignored
+        expect(randStr1.length).toBe(4);
+        expect(randStr2.length).toBe(4);
+    });
+});
 
