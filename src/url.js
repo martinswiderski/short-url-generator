@@ -29,7 +29,7 @@ url = function url() {
      * Short URL length
      * @type {int}
      */
-    this.len = 4;
+    this.len = 5;
 
     this.decomposeQuery = function (query, replace) {
 
