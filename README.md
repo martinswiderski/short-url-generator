@@ -5,14 +5,14 @@ Turns URLs into deconstructed objects with MD5, SH1 and Short URL representation
 ### Version
 0.0.1 beta
 
-[![Build Status](https://travis-ci.org/martinswiderski/shorturl.svg?branch=master)](https://travis-ci.org/martinswiderski/shorturl)
+[![Build Status](https://travis-ci.org/martinswiderski/short-url.svg?branch=master)](https://travis-ci.org/martinswiderski/short-url)
 
 ### Use
 
 After including into your project.json just use:
 
 ```
-var shorturl = require('shorturl'),
+var shorturl = require('short-url'),
     url      = 'https://username:passwd@www.bzz.co.uk:9000/new/session/search?client=ubuntu&channel=fs&q=twilio+sms&ie=utf-8&oe=utf-8&gfe_rd=cr&ei=X2ChVuKzHe_H8geE5aOQDw#hashTagAtTheEnd';
     out      = shorturl(url);
     
