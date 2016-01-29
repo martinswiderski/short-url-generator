@@ -21,6 +21,25 @@ describe("Short class generates", function () {
         expect(randomBool === true || randomBool === false).toBe(true);
     });
 });
+/**
+ * Distribution control (making sure the "random") is not skewed and
+ * lies between 38% - 65% each way
+ */
+var boolVal = null, distribBool = {'t': 0, 'f': 0}, boolDistribution = null;
+for(var i = 0; i <100; i++) {
+    boolVal = short.randomBool();
+    if (boolVal === true) {
+        distribBool.t++;
+    } else {
+        distribBool.f++;
+    }
+}
+describe("Values distribution", function () {
+    it("FALSE is within 38-65%", function () {
+        boolDistribution = (distribBool.f < 65 || distribBool.f > 38 === distribBool.t); // false 38-65%
+        expect(boolDistribution).toBe(true);
+    });
+});
 
 /**
  * Random alphanumeric
@@ -32,5 +51,28 @@ describe("Short class generates", function () {
     });
 });
 
-console.log(short.generate(3));
+/**
+ * Distribution control (making sure the "random") is not skewed and
+ * numbers don't exceed 30%
+ */
+var alphaNumDistr = {a: 0, n: 0}, alphaDistribution;
+for(var i = 0; i <100; i++) {
+    var alphanumVal = short.randomCharacter();
+    if (parseInt(alphanumVal)+'' === alphanumVal) {
+        alphaNumDistr.n++;
+    } else {
+        alphaNumDistr.a++;
+    }
+}
+describe("Values distribution", function () {
+    it("Numbers within 25-45%", function () {
+        alphaDistribution = (alphaNumDistr.n < 45 && alphaNumDistr.n > 25); // 25-45% of numerics
+        expect(boolDistribution).toBe(true);
+    });
+});
+
+
+//console.log(alphaNumDistr);
+
+//console.log(short.generate(3));
 

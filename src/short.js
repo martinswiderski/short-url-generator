@@ -31,33 +31,10 @@ short = function url() {
     },
 
     this.generate = function (min) {
-
-        var out = [], recent = '';
-
-        for (var i = 0; i < parseInt(min); i++) {
-            var anew   = this.randomBool() === true ? this.randomCharacter() : this.randomNumber();
-            if (anew === recent) {
-                var anew   = this.randomBool() === true ? this.randomCharacter() : this.randomNumber();
-            }
-            var recent = anew;
-            if ((parseInt(anew)+'') === (anew+'')) {
-                out.push(anew);
-            } else {
-                if (this.randomBool() === true) {
-                    anew = (new String(anew)).toLocaleLowerCase();
-                }
-                out.push(anew);
-            }
-        }
-        return out.join('');
+        return 'PLACEHOLDER';
     },
 
     this.shuffle = function (min) {
-        var out = [];
-        for (var i = 0; i < min; i++) {
-            out.push(this.randomCharacter());
-        }
-        return out.join('').split("").reverse().join("");
     };
 };
 
