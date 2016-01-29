@@ -1,5 +1,5 @@
 {
-  "name": "node-shorturl",
+  "name": "shorturl",
   "version": "0.0.1",
   "description": "Short string generator for long URLs with no persistence",
   "main": "index.js",
