@@ -5,7 +5,7 @@ Turns URLs into deconstructed objects with MD5, SH1 and Short URL representation
 ### Version
 0.0.1 beta
 
-[![Build Status](https://travis-ci.org/martinswiderski/shorturl.svg?branch=master)](https://travis-ci.org/martinswiderski/node-fastsms)
+[![Build Status](https://travis-ci.org/martinswiderski/shorturl.svg?branch=master)](https://travis-ci.org/martinswiderski/shorturl)
 
 ### Use
 
