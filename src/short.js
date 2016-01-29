@@ -9,8 +9,8 @@ short = function url() {
         return Math.floor(Math.random() * (max - min + 1) + min);
     },
 
-    this.randBool = function () {
-        var num = this.randomNumber(1,2);
+    this.randomBool = function () {
+        var num = this.randomNumber(0,35667);
         return (num % 2 == 0);
     },
 
@@ -27,27 +27,27 @@ short = function url() {
         };
         var range = ranges[this.randomNumber(1, 3)];
         var num = this.randomNumber(range.from, range.to);
-        return (this.randBool() === false) ? pool[num] : pool[num].toLowerCase();
+        return (this.randomBool() === false) ? pool[num] : pool[num].toLowerCase();
     },
 
     this.generate = function (min) {
-        if (!isNaN(min)) {
-            min = config.get('min');
+        if ((typeof min) !== 'number') {
+            return 'ERROR';
         }
-        var x;
-        do {
-            x = this.shuffle(min);
-        } while (!isNaN(x));
-        return x;
-    },
 
-    this.shuffle = function (min) {
-        var out = [];
-        for (var i = 0; i < min; i++) {
-            out.push(this.randomCharacter());
+        var out = [], str, min = parseInt(min);
+
+        for(var i = 0; i <min; i++) {
+            str = this.randomCharacter();
+            if (isNaN(str)) {
+                str = (this.randomBool() === true) ? str.toLocaleLowerCase() : str;
+            }
+            out.push(str);
         }
-        return out.join('').split("").reverse().join("");
+
+        return out.join('');
     };
+
 };
 
 module.exports = new short();

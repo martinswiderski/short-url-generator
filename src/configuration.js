@@ -17,6 +17,9 @@ function readFromEnvVars(key, deflt) {
     }
 }
 
+/***
+ * This is not used in this version of implementation :-)
+ */
 var configuration = function configuration() {
 
     this.storage = {

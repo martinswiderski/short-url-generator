@@ -1,10 +1,21 @@
 var url,
-    urlParse = require('url-parse'),
-    md5sign  = require('md5'),
-    sha1sign = require('sha1'),
-    unixTime = require('unix-time'),
-    urlParse = require('url-parse'),
-    short    = require('./short');
+    urlParse      = require('url-parse'),
+    md5sign       = require('md5'),
+    sha1sign      = require('sha1'),
+    unixTime      = require('unix-time'),
+    urlParse      = require('url-parse'),
+    short         = require('./short');
+
+    //var configuration = require('./configuration');;
+
+
+String.prototype.allReplace = function(replace) {
+    var retStr = this;
+    for (var subject in replace) {
+        retStr = retStr.replace(new RegExp(subject, 'g'), replace[x]);
+    }
+    return retStr;
+};
 
 url = function url() {
 
@@ -13,6 +24,18 @@ url = function url() {
      * @type {string}
      */
     this.template = '{"href":"","protocol":"","username":"","password":"","auth":"","host":"","hostname":"","port":"","pathname":"","query":"","hash":""}';
+
+    /**
+     * Short URL length
+     * @type {int}
+     */
+    this.len = 5;
+
+    this.decomposeQuery = function (query, replace) {
+
+        return 'PLACEHOLDER';
+    },
+
 
     /**
      * Takes URL if valid and breaks it down to pieces
@@ -31,13 +54,14 @@ url = function url() {
     },
 
     this.process = function (string) {
+
         var details = this.details(string),
             date = new Date();
 
         var full = {
                 url: string,
                 strlen: string.length,
-                short: short.generate(),
+                short: short.generate(this.len),
                 md5: md5sign(string),
                 sha1: sha1sign(string),
                 timestamp: date,
@@ -49,7 +73,6 @@ url = function url() {
                 }
             };
 
-        console.log(full);
         return full;
     };
 };
