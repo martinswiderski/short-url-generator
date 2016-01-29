@@ -25,14 +25,7 @@ url = function url() {
 
     this.decomposeQuery = function (query, replace) {
 
-        if (!replace) {
-            replace = {"=": '": "', "?": "{ "};
-        }
-        var retStr = this;
-        for (var x in replace) {
-            retStr = retStr.replace(new RegExp(x, 'g'), replace[x]);
-        }
-        return retStr;
+        return 'PLACEHOLDER';
     },
 
 

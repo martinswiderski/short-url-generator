@@ -60,6 +60,3 @@ describe("Valid URL strings", function () {
 });
 
 
-//var fullUrl = url.process('http://user:pass@www.amazon.co.uk/dp/B00KQOBQYY/ref=sd_allcat_k_hdx89?q=what-is-best&treat=ever&inThe=world#hash')
-
-console.log(url.decomposeQuery('?gws_rd=ssl&no=pilot&we=arethechampiions'));
