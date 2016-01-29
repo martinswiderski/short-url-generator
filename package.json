@@ -1,11 +1,11 @@
 {
-  "name": "short-url",
+  "name": "short-url-generator",
   "version": "0.0.1",
   "description": "Short string generator for long URLs with no persistence",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/martinswiderski/short-url.git"
+    "url": "git+https://github.com/martinswiderski/short-url-generator.git"
   },
   "author": "Martin Swiderski <codebloke@gmail.com> (http://codebloke.wordpress.com/)",
   "maintainers": [
@@ -14,7 +14,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/martinswiderski/short-url/src"
+      "url": "https://github.com/martinswiderski/short-url-generator/src"
     }
   ],
   "scripts": {
@@ -37,9 +37,9 @@
     "standard": "^5.4.1"
   },
   "bugs": {
-    "url": "https://github.com/martinswiderski/short-url/issues"
+    "url": "https://github.com/martinswiderski/short-url-generator/issues"
   },
-  "homepage": "https://bitbucket.org/codebloke/short-url#readme",
+  "homepage": "https://bitbucket.org/codebloke/short-url-generator#readme",
   "directories": {
     "test": "tests"
   },

@@ -12,7 +12,7 @@ Turns URLs into deconstructed objects with MD5, SH1 and Short URL representation
 After including into your project.json just use:
 
 ```
-var shorturl = require('short-url'),
+var shorturl = require('short-url-generator'),
     url      = 'https://username:passwd@www.bzz.co.uk:9000/new/session/search?client=ubuntu&channel=fs&q=twilio+sms&ie=utf-8&oe=utf-8&gfe_rd=cr&ei=X2ChVuKzHe_H8geE5aOQDw#hashTagAtTheEnd';
     out      = shorturl(url);
     
