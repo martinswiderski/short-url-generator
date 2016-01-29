@@ -1,5 +1,5 @@
-var url     = require(__dirname + "/../../src/url"),
-    md5sign = require('md5');
+var shorturl = require(__dirname + "/../../index"),
+    md5sign  = require('md5');
 
 
 /***
@@ -7,7 +7,7 @@ var url     = require(__dirname + "/../../src/url"),
  * Case 1 non-URL
  */
 
-var nonUrl = url.details(123);
+var nonUrl = shorturl.details(123);
 
 describe("Picks up only URL strings", function () {
     it("for processing", function () {
@@ -43,7 +43,7 @@ var expected = {
     username: 'username'
 }
 
-var correctUrl = url.details(urlAddress);
+var correctUrl = shorturl.details(urlAddress);
 
 describe("Valid URL strings", function () {
     it("are correctly resolved", function () {
@@ -60,7 +60,7 @@ describe("Valid URL strings", function () {
     });
 });
 
-var fullDetails = url.process(urlAddress);
+var fullDetails = shorturl.process(urlAddress);
 describe("Full URL details", function () {
     it("are processed if URL is valid", function () {
         expect(fullDetails.url).toBe(urlAddress);
