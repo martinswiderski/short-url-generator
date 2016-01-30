@@ -18,6 +18,29 @@ var shorturl = require('short-url-generator'),
     
 console.log(out);
 
+// Added: 30 Jan 2016 @ 22:57 hrs (UK Time)
+//
+//     Long story short the idea behind having MD5 
+//     is that one you generate short URL for specific URL
+//     and you persist it, you don't have to store it again 
+//     and just reuse, since the landing URL
+//     is going to be exactly the same
+//
+//     Also, implementation doesn't cater for domain and protocol 
+//     of the short URL i.e. http://mydomain.com/4g4K2 in our case below
+//     assuming you know what you downloaded it for.
+// 
+//     K.I.S.S. ;-) Keeping things as simple as possible.
+//     The only possible addition I consider at the moment is breaking down 
+/      Obj.url_details.query into JSON of key: value
+//     but that only if anyone would ask for the feature... 
+//     otherwise enjoy it as it is ;-)
+// 
+//     Same story with the "originator" - as I think you may want 
+//     to populate this nested object with some
+//     context specific data that outside your application 
+//     would be largely irrelevant... 
+
 {
 	"url": "https://username:passwd@www.bzz.co.uk:9000/new/session/search?client=ubuntu&channel=fs&q=twilio+sms&ie=utf-8&oe=utf-8&gfe_rd=cr&ei=X2ChVuKzHe_H8geE5aOQDw#hashTagAtTheEnd",
 	"strlen": 169,
