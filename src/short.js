@@ -3,7 +3,7 @@ var short,
 
 short = function url() {
 
-    this.poll = 'TUVGH1I8AC3J2VKLM460BN6O5PQ7RS9XYWZ';
+    this.pool = 'TUVGH1I8AC3J2VKLM460BN6O5PQ7RS9XYWZ';
 
     this.randomNumber = function (min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
@@ -16,16 +16,16 @@ short = function url() {
 
     this.randomCharacter = function (pool) {
         if (!pool) {
-            pool = this.poll;
+            pool = this.pool;
         }
         var ranges = {
-            '1': { from: 0, to: 9 },
-            '2': { from: 10, to: 17 },
-            '3': { from: 18, to: 25 },
-            '4': { from: 26, to: 31 },
-            '5': { from: 31, to: 34 }
+            1: { from: 0, to: 9 },
+            2: { from: 10, to: 17 },
+            3: { from: 18, to: 25 },
+            4: { from: 26, to: 31 },
+            5: { from: 31, to: 34 }
         };
-        var range = ranges[this.randomNumber(1, 3)];
+        var range = ranges[this.randomNumber(1, 5)];
         var num = this.randomNumber(range.from, range.to);
         return (this.randomBool() === false) ? pool[num] : pool[num].toLowerCase();
     },
