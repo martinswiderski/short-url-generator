@@ -3,7 +3,7 @@
 Turns URLs into deconstructed objects with MD5, SH1 and Short URL representation.
 
 ### Version
-0.0.1 beta
+0.0.13 beta
 
 [![Build Status](https://travis-ci.org/martinswiderski/short-url-generator.svg?branch=master)](https://travis-ci.org/martinswiderski/short-url-generator)
 
@@ -18,6 +18,10 @@ var shorturl = require('short-url-generator'),
     
 console.log(out);
 
+// Added: 3 Feb 2016 @ 09:00 hrs (UK Time)
+//     NEW:  I added the breaking down Obj.url_details.query 
+//     into JSON of key: value pairs.
+// 
 // Added: 30 Jan 2016 @ 22:57 hrs (UK Time)
 //
 //     Long story short the idea behind having MD5 
@@ -29,12 +33,6 @@ console.log(out);
 //     Also, implementation doesn't cater for domain and protocol 
 //     of the short URL i.e. http://mydomain.com/4g4K2 in our case below
 //     assuming you know what you downloaded it for.
-// 
-//     K.I.S.S. ;-) Keeping things as simple as possible.
-//     The only possible addition I consider at the moment is breaking down 
-/      Obj.url_details.query into JSON of key: value
-//     but that only if anyone would ask for the feature... 
-//     otherwise enjoy it as it is ;-)
 // 
 //     Same story with the "originator" - as I think you may want 
 //     to populate this nested object with some
