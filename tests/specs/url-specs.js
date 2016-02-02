@@ -1,4 +1,4 @@
-var shorturl = require(__dirname + "/../../index"),
+var shorturl = require(__dirname + "/../../url"),
     md5sign  = require('md5');
 
 
@@ -41,7 +41,7 @@ var expected = {
     hostname: 'www.bzz.co.uk',
     password: 'passwd',
     username: 'username'
-}
+};
 
 var correctUrl = shorturl.details(urlAddress);
 
