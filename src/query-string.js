@@ -1,16 +1,8 @@
-var Entities = require('html-entities').AllHtmlEntities,
-    entities = new Entities();
 
-var queryString = function queryString() {
+var queryString,
+    querystringProc = require('querystring');
 
-    /**
-     * Checks if passed string is not a HTML Entity already (which it well may be)
-     * @param string String to check
-     * @return {bool}
-     */
-    this.isHtmlEntityAlready = function (string) {
-
-    },
+queryString = function queryString() {
 
     /**
      * Checks if passed string is potentially valid Query string
@@ -19,20 +11,12 @@ var queryString = function queryString() {
      */
     this.isValidQuerystring = function (string) {
 
-        var diffQuestionmark = ((parseInt(string.length) - parseInt((string.replace('?', '')).length)) === 1),
+        var firstQuestion    = string[0] === '?',
+            diffQuestionmark = ((parseInt(string.length) - parseInt((string.replace('?', '')).length)) === 1),
             diffEqualOnce    = ((parseInt(string.length) - parseInt((string.replace('==', '')).length)) === 0),
             diffEqual        = ((parseInt(string.length) - parseInt((string.replace('=', '')).length)) > 0);
 
-        return (diffEqual === true && diffQuestionmark === true && diffEqualOnce === true);
-    },
-
-    /**
-     * Turns string into non-HTML Entity
-     * @param string String to be non-HTML Entity
-     * @return {bool}
-     */
-    this.deHtmlEntity = function (string) {
-
+        return (firstQuestion === true && diffEqual === true && diffQuestionmark === true && diffEqualOnce === true);
     },
 
     /**
@@ -41,7 +25,11 @@ var queryString = function queryString() {
      * @returns {object}
      */
      this.decomposeToJson = function (string) {
-
+        if (this.isValidQuerystring(string) === true) {
+            var obj = querystringProc.decode(string.replace('?', ''));
+            return obj;
+        }
+        return {};
      };
 };
 
