@@ -51,6 +51,19 @@ describe("Short class generates", function () {
     });
 });
 
+var randomFromPool = short.randomCharacter('12AB');
+describe("Short if given a pool of chars generates", function () {
+    it("random alphanumeric from within the range", function () {
+        var expectedFromPool = {
+            '1': true,
+            '2': true,
+            'A': true,
+            'B': true,
+        };
+        expect(expectedFromPool[randomFromPool]).toBe(true);
+    });
+});
+
 /**
  * Distribution control (making sure the "random") is not skewed and
  * numbers don't exceed 30%
