@@ -4,18 +4,9 @@ var url,
     sha1sign      = require('sha1'),
     unixTime      = require('unix-time'),
     urlParse      = require('url-parse'),
-    short         = require('./short');
-
-    //var configuration = require('./configuration');;
-
-
-String.prototype.allReplace = function(replace) {
-    var retStr = this;
-    for (var subject in replace) {
-        retStr = retStr.replace(new RegExp(subject, 'g'), replace[x]);
-    }
-    return retStr;
-};
+    short         = require('./short'),
+    queryStrJson  = require('./query-string'),
+    configuration = require('./configuration');
 
 url = function url() {
 
@@ -30,12 +21,6 @@ url = function url() {
      * @type {int}
      */
     this.len = 5;
-
-    this.decomposeQuery = function (query, replace) {
-
-        return 'PLACEHOLDER';
-    },
-
 
     /**
      * Takes URL if valid and breaks it down to pieces
@@ -56,7 +41,8 @@ url = function url() {
     this.process = function (string) {
 
         var details = this.details(string),
-            date = new Date();
+            date    = new Date();
+            //queryStrJson = queryStrJson.decompose(details.query);
 
         var full = {
                 url: string,
