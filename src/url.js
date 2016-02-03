@@ -5,7 +5,7 @@ var url,
     unixTime      = require('unix-time'),
     urlParse      = require('url-parse'),
     short         = require('./short'),
-    queryStrJson  = require('./query-string'),
+    queryString   = require('./query-string'),
     configuration = require('./configuration');
 
 url = function url() {
@@ -14,7 +14,7 @@ url = function url() {
      * Blank URL template
      * @type {string}
      */
-    this.template = '{"href":"","protocol":"","username":"","password":"","auth":"","host":"","hostname":"","port":"","pathname":"","query":"","hash":""}';
+    this.template = '{"href":"","protocol":"","username":"","password":"","auth":"","host":"","hostname":"","port":"","pathname":"","query":"","hash":"","query_details": {}}';
 
     /**
      * Short URL length
@@ -40,9 +40,11 @@ url = function url() {
 
     this.process = function (string) {
 
-        var details = this.details(string),
-            date    = new Date();
-            //queryStrJson = queryStrJson.decompose(details.query);
+        var details, dateString;
+
+        details               = this.details(string);
+        details.query_details = queryString.decomposeToJson(details.query);
+        dateString            = new Date();
 
         var full = {
                 url: string,
@@ -50,8 +52,8 @@ url = function url() {
                 short: short.generate(this.len),
                 md5: md5sign(string),
                 sha1: sha1sign(string),
-                timestamp: date,
-                unix: unixTime(date),
+                timestamp: dateString,
+                unix: unixTime(dateString),
                 is_url: (details.protocol !== '' && details.host !== ''),
                 url_details: details,
                 originator: {
