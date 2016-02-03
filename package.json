@@ -22,7 +22,6 @@
     "jslint": "jslint server.js src/*.js"
   },
   "dependencies": {
-    "html-entities": "^1.2.0",
     "jasmine-node": "^1.14.5",
     "md5": "^2.0.0",
     "querystring": "^0.2.0",
