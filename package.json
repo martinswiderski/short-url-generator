@@ -1,6 +1,6 @@
 {
   "name": "short-url-generator",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Short string generator for long URLs with no persistence",
   "main": "index.js",
   "repository": {

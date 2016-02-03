@@ -4,18 +4,9 @@ var url,
     sha1sign      = require('sha1'),
     unixTime      = require('unix-time'),
     urlParse      = require('url-parse'),
-    short         = require('./short');
-
-    //var configuration = require('./configuration');;
-
-
-String.prototype.allReplace = function(replace) {
-    var retStr = this;
-    for (var subject in replace) {
-        retStr = retStr.replace(new RegExp(subject, 'g'), replace[x]);
-    }
-    return retStr;
-};
+    short         = require('./short'),
+    queryString   = require('./query-string'),
+    configuration = require('./configuration');
 
 url = function url() {
 
@@ -23,19 +14,13 @@ url = function url() {
      * Blank URL template
      * @type {string}
      */
-    this.template = '{"href":"","protocol":"","username":"","password":"","auth":"","host":"","hostname":"","port":"","pathname":"","query":"","hash":""}';
+    this.template = '{"href":"","protocol":"","username":"","password":"","auth":"","host":"","hostname":"","port":"","pathname":"","query":"","hash":"","query_details": {}}';
 
     /**
      * Short URL length
      * @type {int}
      */
     this.len = 5;
-
-    this.decomposeQuery = function (query, replace) {
-
-        return 'PLACEHOLDER';
-    },
-
 
     /**
      * Takes URL if valid and breaks it down to pieces
@@ -55,8 +40,11 @@ url = function url() {
 
     this.process = function (string) {
 
-        var details = this.details(string),
-            date = new Date();
+        var details, dateString;
+
+        details               = this.details(string);
+        details.query_details = queryString.decomposeToJson(details.query);
+        dateString            = new Date();
 
         var full = {
                 url: string,
@@ -64,8 +52,8 @@ url = function url() {
                 short: short.generate(this.len),
                 md5: md5sign(string),
                 sha1: sha1sign(string),
-                timestamp: date,
-                unix: unixTime(date),
+                timestamp: dateString,
+                unix: unixTime(dateString),
                 is_url: (details.protocol !== '' && details.host !== ''),
                 url_details: details,
                 originator: {

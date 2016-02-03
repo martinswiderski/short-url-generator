@@ -1,6 +1,5 @@
-var shorturl = require(__dirname + "/../../url"),
+var shorturl = require('./../../src/url'),
     md5sign  = require('md5');
-
 
 /***
  * First breaking down URLs to components
@@ -61,11 +60,17 @@ describe("Valid URL strings", function () {
 });
 
 var fullDetails = shorturl.process(urlAddress);
+
 describe("Full URL details", function () {
     it("are processed if URL is valid", function () {
         expect(fullDetails.url).toBe(urlAddress);
         expect(fullDetails.is_url).toBe(true);
         expect(fullDetails.md5).toBe(md5sign(urlAddress));
         expect(fullDetails.strlen).toBe(urlAddress.length);
+    });
+    it("pulls individual GET querystring values", function () {
+        expect(fullDetails.url_details.query_details['q']).toBe('twilio sms');
+        expect(fullDetails.url_details.query_details['channel']).toBe('fs');
+        expect(fullDetails.url_details.query_details['ie']).toBe('utf-8');
     });
 });

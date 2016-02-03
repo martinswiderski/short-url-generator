@@ -18,7 +18,7 @@ var shorturl = require('short-url-generator'),
     
 console.log(out);
 
-// Added: 3 Feb 2016 @ 09:00 hrs (UK Time)
+// Added: 3 Feb 2016 @ 23:44 hrs (UK Time)
 //     NEW:  I added the breaking down Obj.url_details.query 
 //     into JSON of key: value pairs.
 // 
@@ -49,16 +49,25 @@ console.log(out);
 	"unix": 1454048040,
 	"is_url": true,
 	"url_details": {
-		"hash": "#hashTagAtTheEnd",
-		"query": "?client=ubuntu&channel=fs&q=twilio+sms&ie=utf-8&oe=utf-8&gfe_rd=cr&ei=X2ChVuKzHe_H8geE5aOQDw",
-		"protocol": "https:",
-		"pathname": "/new/session/search",
-		"auth": "username:passwd",
-		"host": "www.bzz.co.uk:9000",
-		"port": "9000",
-		"hostname": "www.bzz.co.uk",
-		"password": "passwd",
-		"username": "username"
+.		"hash": "#hashTagAtTheEnd",
+.		"protocol": "https:",
+.		"pathname": "/new/session/search",
+.		"auth": "username:passwd",
+.		"host": "www.bzz.co.uk:9000",
+.		"port": "9000",
+.		"hostname": "www.bzz.co.uk",
+.		"password": "passwd",
+.		"username": "username",
+.		"query": "?client=ubuntu&channel=fs&q=twilio+sms&ie=utf-8&oe=utf-8&gfe_rd=cr&ei=X2ChVuKzHe_H8geE5aOQDw",
+.       "query_details": {
+.            "client": "ubuntu",
+.            "channel": "fs",
+.            "q": "twilio sms",
+.            "ie": "utf-8",
+.            "oe": "utf-8",
+.            "gfe_rd": "cr",
+.            "ei": "X2ChVuKzHe_H8geE5aOQDw"
+.        }
 	},
 	"originator": {
 		"ip": "not-implemented-yet"
