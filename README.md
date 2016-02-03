@@ -49,16 +49,16 @@ console.log(out);
 	"unix": 1454048040,
 	"is_url": true,
 	"url_details": {
-		"hash": "#hashTagAtTheEnd",
-		"query": "?client=ubuntu&channel=fs&q=twilio+sms&ie=utf-8&oe=utf-8&gfe_rd=cr&ei=X2ChVuKzHe_H8geE5aOQDw",
-		"protocol": "https:",
-		"pathname": "/new/session/search",
-		"auth": "username:passwd",
-		"host": "www.bzz.co.uk:9000",
-		"port": "9000",
-		"hostname": "www.bzz.co.uk",
-		"password": "passwd",
-		"username": "username"
+.		"hash": "#hashTagAtTheEnd",
+.		"query": "?client=ubuntu&channel=fs&q=twilio+sms&ie=utf-8&oe=utf-8&gfe_rd=cr&ei=X2ChVuKzHe_H8geE5aOQDw",
+.		"protocol": "https:",
+.		"pathname": "/new/session/search",
+.		"auth": "username:passwd",
+.		"host": "www.bzz.co.uk:9000",
+.		"port": "9000",
+.		"hostname": "www.bzz.co.uk",
+.		"password": "passwd",
+.		"username": "username"
 	},
 	"originator": {
 		"ip": "not-implemented-yet"
