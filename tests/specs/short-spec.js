@@ -59,6 +59,8 @@ describe("Short if given a pool of chars generates", function () {
             '2': true,
             'A': true,
             'B': true,
+            'a': true,
+            'b': true,
         };
         expect(expectedFromPool[randomFromPool]).toBe(true);
     });
