@@ -1,0 +1,207 @@
+Last run by [mswiderski] on... Thu Feb  4 16:32:20 GMT 2016
+
+**************************
+* Source                 *
+**************************
+
+/home/mswiderski/development/short-url-generator/src/configuration.js
+  15:9  error  Unexpected console statement  no-console
+
+/home/mswiderski/development/short-url-generator/src/query-string.js
+  28:9  error  Expected indentation of 9 space characters but found 8  indent
+  32:9  error  Expected indentation of 9 space characters but found 8  indent
+
+/home/mswiderski/development/short-url-generator/src/short.js
+   2:5   error  "config" is defined but never used                        no-unused-vars
+  21:17  error  Expected indentation of 20 space characters but found 16  indent
+  22:17  error  Expected indentation of 20 space characters but found 16  indent
+  23:17  error  Expected indentation of 20 space characters but found 16  indent
+  24:17  error  Expected indentation of 20 space characters but found 16  indent
+  25:17  error  Expected indentation of 20 space characters but found 16  indent
+  26:13  error  Expected indentation of 16 space characters but found 12  indent
+  27:13  error  Expected indentation of 16 space characters but found 12  indent
+  28:13  error  Expected indentation of 16 space characters but found 12  indent
+  45:28  error  "min" is already defined                                  no-redeclare
+
+/home/mswiderski/development/short-url-generator/src/url.js
+   6:5   error  "urlParse" is already defined                             no-redeclare
+   9:5   error  "configuration" is defined but never used                 no-unused-vars
+  50:17  error  Expected indentation of 12 space characters but found 16  indent
+  51:17  error  Expected indentation of 12 space characters but found 16  indent
+  52:17  error  Expected indentation of 12 space characters but found 16  indent
+  53:17  error  Expected indentation of 12 space characters but found 16  indent
+  54:17  error  Expected indentation of 12 space characters but found 16  indent
+  55:17  error  Expected indentation of 12 space characters but found 16  indent
+  56:17  error  Expected indentation of 12 space characters but found 16  indent
+  57:17  error  Expected indentation of 12 space characters but found 16  indent
+  58:17  error  Expected indentation of 12 space characters but found 16  indent
+  59:17  error  Expected indentation of 12 space characters but found 16  indent
+  62:13  error  Expected indentation of 8 space characters but found 12   indent
+
+✖ 26 problems (26 errors, 0 warnings)
+
+**************************
+* Tests                  *
+**************************
+
+/home/mswiderski/development/short-url-generator/tests/specs/configuration-spec.js
+   6:41  error  Strings must use singlequote  quotes
+   8:1   error  "describe" is not defined     no-undef
+   8:10  error  Strings must use singlequote  quotes
+   9:5   error  "it" is not defined           no-undef
+   9:8   error  Strings must use singlequote  quotes
+  10:9   error  "expect" is not defined       no-undef
+  10:34  error  Strings must use singlequote  quotes
+  11:9   error  "expect" is not defined       no-undef
+  11:34  error  Strings must use singlequote  quotes
+  12:9   error  "expect" is not defined       no-undef
+  12:34  error  Strings must use singlequote  quotes
+  13:9   error  "expect" is not defined       no-undef
+  13:34  error  Strings must use singlequote  quotes
+  19:1   error  "describe" is not defined     no-undef
+  19:10  error  Strings must use singlequote  quotes
+  20:5   error  "it" is not defined           no-undef
+  20:8   error  Strings must use singlequote  quotes
+  21:9   error  "expect" is not defined       no-undef
+  21:34  error  Strings must use singlequote  quotes
+
+/home/mswiderski/development/short-url-generator/tests/specs/index-spec.js
+  39:1   error  "describe" is not defined     no-undef
+  39:10  error  Strings must use singlequote  quotes
+  40:5   error  "it" is not defined           no-undef
+  40:8   error  Strings must use singlequote  quotes
+  41:9   error  "expect" is not defined       no-undef
+  42:9   error  "expect" is not defined       no-undef
+  43:9   error  "expect" is not defined       no-undef
+  44:9   error  "expect" is not defined       no-undef
+
+/home/mswiderski/development/short-url-generator/tests/specs/query-string-spec.js
+   2:48  error  Strings must use singlequote  quotes
+   4:28  error  Strings must use singlequote  quotes
+   5:28  error  Strings must use singlequote  quotes
+  11:1   error  "describe" is not defined     no-undef
+  11:10  error  Strings must use singlequote  quotes
+  12:5   error  "it" is not defined           no-undef
+  12:8   error  Strings must use singlequote  quotes
+  13:9   error  "expect" is not defined       no-undef
+  15:5   error  "it" is not defined           no-undef
+  15:8   error  Strings must use singlequote  quotes
+  16:9   error  "expect" is not defined       no-undef
+  18:5   error  "it" is not defined           no-undef
+  18:8   error  Strings must use singlequote  quotes
+  19:9   error  "expect" is not defined       no-undef
+  21:5   error  "it" is not defined           no-undef
+  21:8   error  Strings must use singlequote  quotes
+  22:9   error  "expect" is not defined       no-undef
+  26:1   error  "describe" is not defined     no-undef
+  26:10  error  Strings must use singlequote  quotes
+  27:5   error  "it" is not defined           no-undef
+  27:8   error  Strings must use singlequote  quotes
+  28:9   error  "expect" is not defined       no-undef
+  30:5   error  "it" is not defined           no-undef
+  30:8   error  Strings must use singlequote  quotes
+  31:9   error  "expect" is not defined       no-undef
+  33:5   error  "it" is not defined           no-undef
+  33:8   error  Strings must use singlequote  quotes
+  34:9   error  "expect" is not defined       no-undef
+  36:5   error  "it" is not defined           no-undef
+  36:8   error  Strings must use singlequote  quotes
+  37:9   error  "expect" is not defined       no-undef
+  39:5   error  "it" is not defined           no-undef
+  39:8   error  Strings must use singlequote  quotes
+  40:9   error  "expect" is not defined       no-undef
+  42:5   error  "it" is not defined           no-undef
+  42:8   error  Strings must use singlequote  quotes
+  43:9   error  "expect" is not defined       no-undef
+
+/home/mswiderski/development/short-url-generator/tests/specs/short-spec.js
+    9:1   error  "describe" is not defined                      no-undef
+    9:10  error  Strings must use singlequote                   quotes
+   10:5   error  "it" is not defined                            no-undef
+   10:8   error  Strings must use singlequote                   quotes
+   11:9   error  "expect" is not defined                        no-undef
+   19:1   error  "describe" is not defined                      no-undef
+   19:10  error  Strings must use singlequote                   quotes
+   20:5   error  "it" is not defined                            no-undef
+   20:8   error  Strings must use singlequote                   quotes
+   21:9   error  "expect" is not defined                        no-undef
+   37:1   error  "describe" is not defined                      no-undef
+   37:10  error  Strings must use singlequote                   quotes
+   38:5   error  "it" is not defined                            no-undef
+   38:8   error  Strings must use singlequote                   quotes
+   40:9   error  "expect" is not defined                        no-undef
+   48:1   error  "describe" is not defined                      no-undef
+   48:10  error  Strings must use singlequote                   quotes
+   49:5   error  "it" is not defined                            no-undef
+   49:8   error  Strings must use singlequote                   quotes
+   50:9   error  "expect" is not defined                        no-undef
+   55:1   error  "describe" is not defined                      no-undef
+   55:10  error  Strings must use singlequote                   quotes
+   56:5   error  "it" is not defined                            no-undef
+   56:8   error  Strings must use singlequote                   quotes
+   63:22  error  Unexpected trailing comma                      comma-dangle
+   65:9   error  "expect" is not defined                        no-undef
+   73:35  error  "alphaDistribution" is defined but never used  no-unused-vars
+   74:9   error  "i" is already defined                         no-redeclare
+   82:1   error  "describe" is not defined                      no-undef
+   82:10  error  Strings must use singlequote                   quotes
+   83:5   error  "it" is not defined                            no-undef
+   83:8   error  Strings must use singlequote                   quotes
+   85:9   error  "expect" is not defined                        no-undef
+   93:1   error  "describe" is not defined                      no-undef
+   93:10  error  Strings must use singlequote                   quotes
+   94:5   error  "it" is not defined                            no-undef
+   94:8   error  Strings must use singlequote                   quotes
+   95:9   error  "expect" is not defined                        no-undef
+  102:1   error  "describe" is not defined                      no-undef
+  102:10  error  Strings must use singlequote                   quotes
+  103:5   error  "it" is not defined                            no-undef
+  103:8   error  Strings must use singlequote                   quotes
+  106:9   error  "expect" is not defined                        no-undef
+  107:9   error  "expect" is not defined                        no-undef
+
+/home/mswiderski/development/short-url-generator/tests/specs/url-spec.js
+  11:1   error  "describe" is not defined     no-undef
+  11:10  error  Strings must use singlequote  quotes
+  12:5   error  "it" is not defined           no-undef
+  12:8   error  Strings must use singlequote  quotes
+  13:9   error  "expect" is not defined       no-undef
+  14:9   error  "expect" is not defined       no-undef
+  15:9   error  "expect" is not defined       no-undef
+  16:9   error  "expect" is not defined       no-undef
+  17:9   error  "expect" is not defined       no-undef
+  18:9   error  "expect" is not defined       no-undef
+  19:9   error  "expect" is not defined       no-undef
+  20:9   error  "expect" is not defined       no-undef
+  21:9   error  "expect" is not defined       no-undef
+  22:9   error  "expect" is not defined       no-undef
+  47:1   error  "describe" is not defined     no-undef
+  47:10  error  Strings must use singlequote  quotes
+  48:5   error  "it" is not defined           no-undef
+  48:8   error  Strings must use singlequote  quotes
+  49:9   error  "expect" is not defined       no-undef
+  50:9   error  "expect" is not defined       no-undef
+  51:9   error  "expect" is not defined       no-undef
+  52:9   error  "expect" is not defined       no-undef
+  53:9   error  "expect" is not defined       no-undef
+  54:9   error  "expect" is not defined       no-undef
+  55:9   error  "expect" is not defined       no-undef
+  56:9   error  "expect" is not defined       no-undef
+  57:9   error  "expect" is not defined       no-undef
+  58:9   error  "expect" is not defined       no-undef
+  64:1   error  "describe" is not defined     no-undef
+  64:10  error  Strings must use singlequote  quotes
+  65:5   error  "it" is not defined           no-undef
+  65:8   error  Strings must use singlequote  quotes
+  66:9   error  "expect" is not defined       no-undef
+  67:9   error  "expect" is not defined       no-undef
+  68:9   error  "expect" is not defined       no-undef
+  69:9   error  "expect" is not defined       no-undef
+  71:5   error  "it" is not defined           no-undef
+  71:8   error  Strings must use singlequote  quotes
+  72:9   error  "expect" is not defined       no-undef
+  73:9   error  "expect" is not defined       no-undef
+  74:9   error  "expect" is not defined       no-undef
+
+✖ 149 problems (149 errors, 0 warnings)
+
